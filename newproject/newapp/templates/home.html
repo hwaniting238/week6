@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanwha Eagles Fan Community</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Eagles Fans</h1>
+    <div class="container">
+        총 게시물 수: {{newapps.count}}
+    <div>
+        <br>
+        <a href="{%url 'new'%}">글쓰기</a>
+    </div>
+    {%for newapp in newapps%}
+        <div>
+        <h3>{{newapp.title}}</h3>
+        작성자: {{newapp.writer}}
+        <br>
+        <br>
+        내용: {{newapp.summary}} <a href = "{%url 'detail' newapp.id %}">...more</a>
+        <br>
+        <br>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
